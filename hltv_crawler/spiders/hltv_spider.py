@@ -52,7 +52,7 @@ class HLTVSpider(scrapy.Spider):
     def get_all_players_stats(self, left_team_item, right_team_item, response):
         players_stats = response.xpath('//table[@class="stats-table"]')
         left_team_players_stats = self.get_team_players_stats(left_team_item, players_stats[0], response)
-        right_team_players_stats = self.get_team_players_stats(left_team_item, players_stats[1], response)
+        right_team_players_stats = self.get_team_players_stats(right_team_item, players_stats[1], response)
         return left_team_players_stats + right_team_players_stats        
 
     def parse_match(self, response):
