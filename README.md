@@ -27,7 +27,8 @@ It will create an `items.json` file, with the following format:
         "match_item": {
             "map_name": "Dust2",
             "event": "IEM Katowice 2020",
-            "date": "2020-03-01 16:00"
+            "date": "2020-03-01 16:00",
+            "match_id" : 99483
         }
     }
 }...]

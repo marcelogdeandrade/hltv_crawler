@@ -15,6 +15,8 @@ class HLTVSpider(scrapy.Spider):
         loader.add_value('map_name', map_name)
         loader.add_xpath('event', '//a[@class="block text-ellipsis"]/text()')
         loader.add_xpath('date', '//div[@class="small-text"]/span/text()')
+        match_id = response.xpath('//a[@class="stats-top-menu-item stats-top-menu-item-link selected"]/@href').get().split('/')[4]
+        loader.add_value('match_id', match_id)
         return loader.load_item()
     
     def get_team_item(self, match_item, selector):

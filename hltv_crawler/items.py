@@ -9,6 +9,7 @@ import scrapy
 from scrapy.loader.processors import TakeFirst
 
 class MatchItem(scrapy.Item):
+    match_id = scrapy.Field(output_processor=TakeFirst())
     map_name = scrapy.Field(output_processor=TakeFirst())
     event = scrapy.Field(output_processor=TakeFirst())
     date = scrapy.Field(output_processor=TakeFirst())
